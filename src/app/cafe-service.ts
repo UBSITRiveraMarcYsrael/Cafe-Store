@@ -1,6 +1,24 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal, computed } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CafeService {}
+export class CafeService {
+  menu = signal([
+    {},
+    {},
+    {},
+  ]);
+
+  snack = signal([
+    {},
+    {},
+    {}
+  ])
+
+  mart = signal([
+    {},
+    {},
+    {}
+  ])
+}
