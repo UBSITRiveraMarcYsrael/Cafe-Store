@@ -1,0 +1,181 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #d97706;    /* Warm Amber / Golden Hour */
+    --primary-hover: #b45309;    /* Deep Amber */
+    --secondary-color: #292524;  /* Deep Coffee Stone */
+    --accent-color: #fef3c7;     /* Light Cream/Gold */
+    --text-main: #44403c;        /* Soft Charcoal */
+    --bg-main: #fafaf9;          /* Warm Off-White */
+    --white: #ffffff;
+    --radius: 12px;
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+  }
+  
+  .home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  /* --- Hero Section --- */
+  .hero-section {
+    background: linear-gradient(135deg, var(--secondary-color), #44403c);
+    color: var(--white);
+    padding: 80px 40px;
+    border-radius: var(--radius);
+    text-align: center;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #fbbf24; /* Bright Gold */
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  /* --- Features Grid Section --- */
+  .features-section {
+    margin-bottom: 60px;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .feature-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border: 1px solid #f5f5f4;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(217, 119, 6, 0.1);
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    background-color: var(--accent-color);
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+  }
+  
+  .feature-card p {
+    font-size: 0.95rem;
+    color: #78716c;
+  }
+  
+  /* --- Promotional Banner --- */
+  .promo-banner {
+    background-color: var(--accent-color);
+    border: 2px dashed var(--primary-color);
+    padding: 40px;
+    border-radius: var(--radius);
+    text-align: center;
+    position: relative;
+  }
+  
+  .promo-badge {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+  }
+  
+  .promo-banner h2 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+  }
+  
+  .promo-banner p {
+    font-size: 1.1rem;
+  }
+  
+  .promo-code {
+    background-color: var(--white);
+    color: var(--primary-hover);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #fcd34d;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 50px 20px;
+    }
+    
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .promo-banner {
+      padding: 30px 20px;
+    }
+  }
+  
