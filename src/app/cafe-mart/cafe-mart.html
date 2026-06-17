@@ -10,7 +10,6 @@
         <h2 class="category-title">Snacks & Munchies</h2>
         <div id="snacks-list" class="item-list">
           @for (item of service.mart(); track item.id) {
-            @if ([27, 28, 30, 31, 33, 35].includes(item.id)) {
               <div class="menu-item">
                 <div class="item-header">
                   <h3 class="item-name">{{ item.name }}</h3>
@@ -20,7 +19,6 @@
                 <button class="btn-add" (click)="service.addToCart(item)">Add to Cart</button>
               </div>
             }
-          }
         </div>
       </section>
   

@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,130 +6,108 @@
 
 body {
   font-family: "Segoe UI", sans-serif;
-  background: #fdfaf6; /* FIX: Changed to a warmer, softer cream background */
-  color: #3e322a; /* FIX: Changed from dark grey to a warm charcoal-brown */
+  background: #faf7f2; 
+  color: #563f31; 
   line-height: 1.5;
 }
 
-/* Main Container */
 .container {
   max-width: 1400px;
   margin: auto;
   padding: 2rem;
 }
 
-/* Header */
 header {
-  text-align: center;
+  text-align: left; 
   margin-bottom: 2rem;
 }
 
 header h1 {
   font-size: 3rem;
-  color: #513629; /* FIX: A deeper, cozier chocolate brown */
+  color: #151414;   
   margin-bottom: 0.5rem;
 }
 
 header p {
-  color: #8c7467; /* FIX: Softened to a warm taupe-brown */
+  color: #8c7467;    
   font-size: 1.1rem;
 }
 
-/* Grid Layout */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 
-/* Category Sections */
+
 .category-section {
-  background: #fffcf9; /* FIX: Warm, paper-white background for cards */
+  background: #fbf6f0; 
   border-radius: 16px;
   padding: 1.5rem;
-  box-shadow: 0 6px 18px rgba(92, 61, 46, 0.04); /* FIX: Soft brown shadow instead of cold grey */
+  box-shadow: 0 6px 20px rgba(86, 63, 49, 0.04);
 }
 
 .category-title {
-  color: #704f38; /* FIX: Warm roasted-coffee accent */
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #f0e4da; /* FIX: Warm, cozy divider line */
+  color: #704f38; 
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e9dccf; 
   padding-bottom: 0.5rem;
 }
 
-/* Menu Item */
 .item-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .menu-item {
-  border: 1px solid #f3eae1; /* FIX: Softer, warmer borders */
+  border: 1px solid #f3eae1; 
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1.5rem;
   background: #ffffff;
+  box-shadow: 0 4px 12px #5c3d2e05;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(92, 61, 46, 0.08); /* FIX: Depth with a warm hue */
+  box-shadow: 0 8px 24px #5c3d2e14;
 }
 
 .item-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.75rem;
 }
 
 .item-name {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  color: #4a372c; /* FIX: Cozy dark wood color */
+  color: #4a372c; 
 }
 
 .item-price {
   font-weight: bold;
-  color: #a0522d; /* FIX: Rich sienna / warm terracotta accent */
+  color: #a0522d;
 }
 
 .item-description {
-  margin: 0.5rem 0 1rem;
-  color: #7d675b; /* FIX: Warm cocoa-tinted grey */
+  color: #7d675b;
   font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
 }
 
-/* Buttons */
-.btn-add,
-.btn-checkout,
-.btn-clear,
-.btn-qty {
-  cursor: pointer;
-  border: none;
-  transition: 0.3s;
-}
-
-.btn-add {
-  width: 100%;
-  background: #84593c; /* FIX: Warm cinnamon-latte shade */
-  color: white;
-  padding: 0.7rem;
-  border-radius: 8px;
-  font-weight: 600;
-}
-
-.btn-add:hover {
-  background: #6d472f; /* FIX: Deeper roast tone on hover */
-}
-
-/* Cart Section */
 .cart-section {
-  background: #fffcf9; /* FIX: Uniform warm tone */
+  background: #fbf6f0;
   border-radius: 16px;
   padding: 1.5rem;
-  box-shadow: 0 8px 24px rgba(92, 61, 46, 0.06);
+  box-shadow: 0 8px 24px rgba(86, 63, 49, 0.06);
   position: sticky;
   top: 20px;
 }
@@ -143,21 +120,9 @@ header p {
 }
 
 .cart-header h2 {
-  color: #704f38;
+  color: #8c4323;
 }
 
-.btn-clear {
-  background: #cd5c5c; /* FIX: Changed from bright red to a cozy terracotta/indian red */
-  color: white;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-}
-
-.btn-clear:hover {
-  background: #b24646;
-}
-
-/* Cart Items */
 .cart-items-list {
   display: flex;
   flex-direction: column;
@@ -166,10 +131,10 @@ header p {
 }
 
 .cart-item {
-  border: 1px solid #f3eae1;
+  border: 1px solid #eee4da;
   border-radius: 10px;
   padding: 0.8rem;
-  background: #ffffff;
+  background: #fff;
 }
 
 .cart-item-details {
@@ -180,7 +145,7 @@ header p {
 
 .cart-item-name {
   font-weight: 600;
-  color: #4a372c;
+  color: #423025;
 }
 
 .cart-item-subtotal {
@@ -188,44 +153,14 @@ header p {
   font-weight: bold;
 }
 
-/* Quantity Controls */
-.quantity-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.btn-qty {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #84593c;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.btn-qty:hover {
-  background: #6d472f;
-}
-
-.qty-display {
-  min-width: 20px;
-  text-align: center;
-  font-weight: 600;
-  color: #4a372c;
-}
-
-/* Empty Cart */
 .empty-cart-message {
   text-align: center;
-  color: #a89284; /* FIX: Soft, muted brown-grey */
+  color: #aba096;
   padding: 2rem 0;
 }
 
-/* Cart Footer */
 .cart-footer {
-  border-top: 2px solid #f0e4da;
+  border-top: 2px solid #e9dccf;
   padding-top: 1rem;
 }
 
@@ -241,26 +176,86 @@ header p {
   color: #a0522d;
 }
 
+.btn-checkout,
+.btn-clear,
+.btn-qty {
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-add {
+  width: 100%;
+  background: #bc7c5c; 
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.btn-add:hover {
+  background: #a0522d;
+}
+
+.btn-clear {
+  background: #b57c7c; 
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.btn-clear:hover {
+  background: #9c6363;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.btn-qty {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #bc7c5c;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.btn-qty:hover {
+  background: #a0522d;
+}
+
+.qty-display {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: #423025;
+}
+
 .btn-checkout {
   width: 100%;
-  background: #556b2f; /* FIX: Changed from bright neon green to an elegant olive/sage green */
+  background: #76846e;
   color: white;
   padding: 0.9rem;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
+  box-shadow: 0 4px 12px rgba(118, 132, 110, 0.2);
 }
 
 .btn-checkout:hover {
-  background: #425424;
+  background: #5d6b56; /* Richer forest shade on hover */
 }
 
-/* Responsive */
-@media (min-width: 769px) { /* FIX: Lowered from 992px to match tablet screens and prevent break gaps */
+@media (min-width: 769px) {
   .container {
     display: grid;
     grid-template-columns: 2.5fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   header {
@@ -275,5 +270,9 @@ header p {
 
   .container {
     padding: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
