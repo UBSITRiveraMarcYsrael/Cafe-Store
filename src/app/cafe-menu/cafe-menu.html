@@ -1,1 +1,100 @@
-<p>cafe-menu works!</p>
+<div class="container">
+    <header>
+      <h1>Café Menu</h1>
+      <p>Handcrafted beverages made fresh daily</p>
+    </header>
+  
+    <div class="grid">
+      <section class="category-section">
+        <h2 class="category-title">Coffee</h2>
+        <div id="coffee-list" class="item-list">
+          @for (item of service.coffee(); track item.id) {
+            <div class="menu-item">
+              <div class="item-header">
+                <h3 class="item-name">{{ item.name }}</h3>
+                <span class="item-price">₱{{ item.price }}</span>
+              </div>
+              <p class="item-description">{{ item.description }}</p>
+              <button class="btn-add" (click)="service.addToCart(item)">Add to Cart</button>
+            </div>
+          }
+        </div>
+      </section>
+  
+      <section class="category-section">
+        <h2 class="category-title">Non-Coffee</h2>
+        <div id="noncoffee-list" class="item-list">
+          @for (item of service.noncoffee(); track item.id) {
+            <div class="menu-item">
+              <div class="item-header">
+                <h3 class="item-name">{{ item.name }}</h3>
+                <span class="item-price">₱{{ item.price }}</span>
+              </div>
+              <p class="item-description">{{ item.description }}</p>
+              <button class="btn-add" (click)="service.addToCart(item)">Add to Cart</button>
+            </div>
+          }
+        </div>
+      </section>
+  
+      <section class="category-section">
+        <h2 class="category-title">Fruit Drinks</h2>
+        <div id="fruitdrink-list" class="item-list">
+          @for (item of service.fruitdrink(); track item.id) {
+            <div class="menu-item">
+              <div class="item-header">
+                <h3 class="item-name">{{ item.name }}</h3>
+                <span class="item-price">₱{{ item.price }}</span>
+              </div>
+              <p class="item-description">{{ item.description }}</p>
+              <button class="btn-add" (click)="service.addToCart(item)">Add to Cart</button>
+            </div>
+          }
+        </div>
+      </section>
+    </div>
+  
+    <aside class="cart-section">
+        <div class="cart-header">
+          <h2>Your Order Summary</h2>
+          <!-- Fixed: removed () from cartItems since it is a TypeScript getter -->
+          @if (service.cartItems.length > 0) {
+            <button class="btn-clear" (click)="service.clearCart()">Clear All</button>
+          }
+        </div>
+      
+        <div class="cart-items-list">
+          <!-- Fixed: Using direct item.id for modern track optimization -->
+          @for (item of service.cartItems; track item.id) {
+            <div class="cart-item">
+              <div class="cart-item-details">
+                <span class="cart-item-name">{{ item.name }}</span>
+                <span class="cart-item-subtotal">₱{{ service.getItemSubtotal(item) }}</span>
+              </div>
+              
+              <div class="cart-item-actions">
+                <div class="quantity-controls">
+                  <button class="btn-qty" (click)="service.decrementQuantity(item)">-</button>
+                  <span class="qty-display">{{ item.quantity }}</span>
+                  <button class="btn-qty" (click)="service.incrementQuantity(item)">+</button>
+                </div>
+              </div>
+            </div>
+          } @empty {
+            <p class="empty-cart-message">Your shopping cart is currently empty.</p>
+          }
+        </div>
+      
+        <!-- Fixed: removed () from cartItems here as well -->
+        @if (service.cartItems.length > 0) {
+            <div class="cart-footer">
+              <div class="total-row">
+                <span>Grand Total:</span>
+                <span class="grand-total-price">₱{{ service.totalAmount }}</span>
+              </div>
+              <button class="btn-checkout" (click)="service.checkout()">Place Order</button>
+            </div>
+          }
+          
+      </aside>
+  </div>
