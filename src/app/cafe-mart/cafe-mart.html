@@ -1,0 +1,87 @@
+<div class="container">
+    <header>
+      <h1>🏪 Mini Mart Store</h1>
+      <p>Premium snacks and daily essentials curated for you</p>
+    </header>
+  
+    <div class="grid">
+      <!-- Category: Snacks & Munchies -->
+      <section class="category-section">
+        <h2 class="category-title">Snacks & Munchies</h2>
+        <div id="snacks-list" class="item-list">
+          @for (item of service.mart(); track item.id) {
+            @if ([27, 28, 30, 31, 33, 35].includes(item.id)) {
+              <div class="menu-item">
+                <div class="item-header">
+                  <h3 class="item-name">{{ item.name }}</h3>
+                  <span class="item-price">₱{{ item.price }}</span>
+                </div>
+                <p class="item-description">Delicious treat ready for snacking.</p>
+                <button class="btn-add" (click)="service.addToCart(item)">Add to Cart</button>
+              </div>
+            }
+          }
+        </div>
+      </section>
+  
+      <!-- Category: Beverages -->
+      <section class="category-section">
+        <h2 class="category-title">Beverages</h2>
+        <div id="beverages-list" class="item-list">
+          @for (item of service.mart(); track item.id) {
+            @if ([29, 32, 34].includes(item.id)) {
+              <div class="menu-item">
+                <div class="item-header">
+                  <h3 class="item-name">{{ item.name }}</h3>
+                  <span class="item-price">₱{{ item.price }}</span>
+                </div>
+                <p class="item-description">Refresh and energize your day.</p>
+                <button class="btn-add" (click)="service.addToCart(item)">Add to Cart</button>
+              </div>
+            }
+          }
+        </div>
+      </section>
+    </div>
+  
+    <aside class="cart-section">
+      <div class="cart-header">
+        <h2>Your Order Summary</h2>
+        @if (service.cart().length > 0) {
+          <button class="btn-clear" (click)="service.clearCart()">Clear All</button>
+        }
+      </div>
+    
+      <div class="cart-items-list">
+        @for (entry of service.cart(); track entry.id) {
+          <div class="cart-item">
+            <div class="cart-item-details">
+              <span class="cart-item-name">{{ entry.name }}</span>
+              <span class="cart-item-subtotal">₱{{ entry.price * entry.quantity }}</span>
+            </div>
+            
+            <div class="cart-item-actions">
+              <div class="quantity-controls">
+                <button class="btn-qty" (click)="service.decrementQuantity(entry.id)">-</button>
+                <span class="qty-display">{{ entry.quantity }}</span>
+                <button class="btn-qty" (click)="service.incrementQuantity(entry.id)">+</button>
+              </div>
+            </div>
+          </div>
+        } @empty {
+          <p class="empty-cart-message">Your shopping cart is currently empty.</p>
+        }
+      </div>
+    
+      @if (service.cart().length > 0) {
+        <div class="cart-footer">
+          <div class="total-row">
+            <span>Grand Total:</span>
+            <span class="grand-total-price">₱{{ service.totalPrice() }}</span>
+          </div>
+          <button class="btn-checkout" (click)="service.checkout()">Place Order</button>
+        </div>
+      }
+    </aside>
+  </div>
+  
